@@ -14,6 +14,8 @@ public class UserRegistration {
 
     static Pattern mobileNumber = Pattern.compile("^([0-9]{2,4}+)\\ ([0-9]{10}+)$");
 
+    static Pattern passwordRule1 = Pattern.compile("^([A-za-z]{8,}+)$");
+
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -55,6 +57,17 @@ public class UserRegistration {
         else {
             System.out.println(false);
         }
+
+        System.out.println();
+        System.out.println("Set a password with minimum 8 characters : ");
+        Matcher matcher5 = passwordRule1.matcher("aeaeaeaeAE");
+        if(matcher5.matches()){
+            System.out.println(true);
+        }
+        else {
+            System.out.println(false);
+        }
+
 
 
     }
